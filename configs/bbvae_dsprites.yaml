@@ -1,0 +1,26 @@
+model_params:
+  name: 'BetaVAE'
+  in_channels: 1
+  latent_dim: 10
+  loss_type: 'H'
+  gamma: 6.0
+  max_capacity: 25
+  Capacity_max_iter: 10000
+
+exp_params:
+  dataset: dsprites
+  data_path: "data/"
+  img_size: 64
+  batch_size: 384 # Better to have a square number
+  LR: 0.0001
+  weight_decay: 0.0
+  scheduler_gamma: 0.95
+
+trainer_params:
+  gpus: 1
+  max_epochs: 50
+
+logging_params:
+  save_dir: "logs/"
+  name: "BetaVAE"
+  manual_seed: 1265

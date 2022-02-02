@@ -1,0 +1,27 @@
+model_params:
+  name: 'FactorVAE'
+  in_channels: 3
+  latent_dim: 128
+  gamma: 6.4
+
+exp_params:
+  dataset: 3dcars
+  data_path: "data/"
+  submodel: 'discriminator'
+  retain_first_backpass: True
+  img_size: 64
+  batch_size: 144 # Better to have a square number
+  LR: 0.0001
+  weight_decay: 0.0
+  scheduler_gamma: 0.95
+  LR_2: 0.0001
+  scheduler_gamma_2: 0.95
+
+trainer_params:
+  gpus: 1
+  max_epochs: 50
+
+logging_params:
+  save_dir: "logs/"
+  name: "FactorVAE"
+  manual_seed: 1265

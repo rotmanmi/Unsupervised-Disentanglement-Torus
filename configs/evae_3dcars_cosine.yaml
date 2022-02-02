@@ -1,0 +1,29 @@
+model_params:
+  name: 'TorusVAE'
+  in_channels: 3
+  latent_dim: 128
+  loss_type: 'B'
+  gamma: 1.0
+  max_capacity: 25
+  Capacity_max_iter: 10000
+  bond_dim: 1
+  append_cosine: True
+  ConvTranspose: False
+
+exp_params:
+  dataset: 3dcars
+  data_path: "data/"
+  img_size: 64
+  batch_size: 144 # Better to have a square number
+  LR: 0.0001
+  weight_decay: 0.0
+  scheduler_gamma: 0.95
+
+trainer_params:
+  gpus: 1
+  max_epochs: 50
+
+logging_params:
+  save_dir: "logs/"
+  name: "TorusVAE"
+  manual_seed: 1265
